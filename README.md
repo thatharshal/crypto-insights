@@ -226,17 +226,17 @@ Response format:
 
 ## EVALUATION MODEL – DETAILED REPORT
 
-### OBJECTIVES
+## OBJECTIVES
 
 This project aims to create a validation system for answers from a cryptocurrency question-answering system.  The goals are to ensure answers are relevant to the cryptocurrency, use embeddings for semantic alignment, create a labeled dataset of valid/invalid answers, and allow NLP backend integration. 
 
 
-### DATA ACQUISITION
+## DATA ACQUISITION
 
 The input is JSON data with "coin," "query," and "answers" fields.  Currently, data is loaded locally using  load_data(file_path), with a placeholder for future live data fetching via  fetch_api(url). 
 
 
-### LIBRARIES USED
+## LIBRARIES USED
 
 **JSON:** For handling JSON data. 
 
@@ -262,7 +262,7 @@ The input is JSON data with "coin," "query," and "answers" fields.  Currently, d
 
 **Confusion matrix:** From scikit-learn, to visualize classification model performance. 
 
-### TEXT EXTRACTION & VALIDATION
+## TEXT EXTRACTION & VALIDATION
 
 The  is_valid_entry(entry)  function validates entries by:
 
@@ -276,15 +276,15 @@ Semantically matching the coin and answers using BERT with a cosine similarity t
 
 An entry is valid if either keyword or semantic matching passes. 
 
-### DATA PREPROCESSING
+## DATA PREPROCESSING
 
 A CSV is created with columns for coin, query, status (valid/invalid), and formatted answers. 
 
-### VECTORIZATION (TF-IDF)
+## VECTORIZATION (TF-IDF)
 
 Text is created by concatenating coin, query, and answers, and then vectorized using TfidfVectorizer.  The status is encoded using LabelEncoder, and the final output is a CSV file ("vectorised.csv") with TF-IDF features and encoded status. 
 
-### INTEGRATION WITH NLP MODEL AND BACKEND
+## INTEGRATION WITH NLP MODEL AND BACKEND
 
 The model can be integrated with a Flask backend using a  process_query()  function (to be implemented) and a Flask route to provide real-time validation via a REST API. 
 
