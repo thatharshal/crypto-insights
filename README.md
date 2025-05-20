@@ -223,53 +223,46 @@ Response format:
 3. Source: bitcoin_article_5.pdf | Score: 0.68 | Sentiment: Negative
    "Bitcoin faced a price dip amid regulatory concerns."
 
-## Contributing
 
-We welcome contributions! Please fork the repository, create a branch, and submit a pull request with your changes. For major updates, open an issue first to discuss.
+## EVALUATION MODEL – DETAILED REPORT
 
-## Contact
-
-Please submit a pull request or file an issue on GitHub for support or inquiries.
-
-EVALUATION MODEL – DETAILED REPORT
-
-1. OBJECTIVES
+### OBJECTIVES
 
 This project aims to create a validation system for answers from a cryptocurrency question-answering system.  The goals are to ensure answers are relevant to the cryptocurrency, use embeddings for semantic alignment, create a labeled dataset of valid/invalid answers, and allow NLP backend integration. 
 
 
-2. DATA ACQUISITION
+### DATA ACQUISITION
 
 The input is JSON data with "coin," "query," and "answers" fields.  Currently, data is loaded locally using  load_data(file_path), with a placeholder for future live data fetching via  fetch_api(url). 
 
 
-3. LIBRARIES USED
+### LIBRARIES USED
 
-JSON: For handling JSON data. 
+**JSON:** For handling JSON data. 
 
-CSV: For reading/writing CSV files, used to save scraped article URLs with columns "Coin" and "Article URL". 
+**CSV:** For reading/writing CSV files, used to save scraped article URLs with columns "Coin" and "Article URL". 
 
-Pandas: For data analysis and manipulation, using Series and DataFrames. 
+**Pandas:** For data analysis and manipulation, using Series and DataFrames. 
 
-Sentence-transformers: For creating dense vector embeddings to capture text semantics. 
+**Sentence-transformers:** For creating dense vector embeddings to capture text semantics. 
 
-TfidfVectorizer: From scikit-learn, to convert text to numerical TF-IDF features. 
+**TfidfVectorizer:** From scikit-learn, to convert text to numerical TF-IDF features. 
 
-LabelEncoder: From scikit-learn, to encode categorical labels into numerical ones. 
+**LabelEncoder:** From scikit-learn, to encode categorical labels into numerical ones. 
 
-GridSearchCV: From scikit-learn, for hyperparameter tuning using cross-validation. 
+**GridSearchCV:** From scikit-learn, for hyperparameter tuning using cross-validation. 
 
-train_test_split: From scikit-learn, to split data into training and testing subsets. 
+**train_test_split:** From scikit-learn, to split data into training and testing subsets. 
 
-Pipeline: From scikit-learn, to chain together preprocessing steps and an estimator. 
+**Pipeline:** From scikit-learn, to chain together preprocessing steps and an estimator. 
 
-classification_report: From scikit-learn, to generate a text report showing the main classification metrics. 
+**classification_report:** From scikit-learn, to generate a text report showing the main classification metrics. 
 
-RandomForestClassifier: From scikit-learn, is an ensemble learning method. 
+**RandomForestClassifier:** From scikit-learn, is an ensemble learning method. 
 
-Confusion matrix: From scikit-learn, to visualize classification model performance. 
+**Confusion matrix:** From scikit-learn, to visualize classification model performance. 
 
-4. TEXT EXTRACTION & VALIDATION
+### TEXT EXTRACTION & VALIDATION
 
 The  is_valid_entry(entry)  function validates entries by:
 
@@ -283,28 +276,23 @@ Semantically matching the coin and answers using BERT with a cosine similarity t
 
 An entry is valid if either keyword or semantic matching passes. 
 
-5. DATA PREPROCESSING
+### DATA PREPROCESSING
 
 A CSV is created with columns for coin, query, status (valid/invalid), and formatted answers. 
 
-6. VECTORIZATION (TF-IDF)
+### VECTORIZATION (TF-IDF)
 
 Text is created by concatenating coin, query, and answers, and then vectorized using TfidfVectorizer.  The status is encoded using LabelEncoder, and the final output is a CSV file ("vectorised.csv") with TF-IDF features and encoded status. 
 
-7. INTEGRATION WITH NLP MODEL AND BACKEND
+### INTEGRATION WITH NLP MODEL AND BACKEND
 
 The model can be integrated with a Flask backend using a  process_query()  function (to be implemented) and a Flask route to provide real-time validation via a REST API. 
 
-8. RESULTS
 
-The evaluation dataset has 63 entries saved in  validation_results.csv.  The TF-IDF matrix shape is (63, 129), and labels are encoded as 1 for valid and 0 for invalid. 
+## Contributing
 
-9. STRENGTHS & LIMITATIONS
+We welcome contributions! Please fork the repository, create a branch, and submit a pull request with your changes. For major updates, open an issue first to discuss.
 
-✅ Strengths: Combines semantic and lexical checks, is extensible, has a modular codebase, and is suitable for batch and API use. 
+## Contact
 
-⚠️ Limitations: The fixed threshold may under/overfit, only the first answer is evaluated, and there's no integration for complex dialogues or sentiment filtering. 
-
-10. CONCLUSION
-
-The model effectively uses NLP techniques for answer validation in a cryptocurrency QA pipeline, with robust semantic checks, flexible preprocessing, and backend-ready logic.
+Please submit a pull request or file an issue on GitHub for support or inquiries.
