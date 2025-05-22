@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoSights | AI-Powered Crypto Intelligence</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/bg_assests/LOGOfavicon.ico') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        primary: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#bc24c4',
+                            700: '#9d1d9d',
+                            800: '#831983',
+                            900: '#6b176b',
+                        },
+                        accent: {
+                            pink: '#ec4899',
+                            purple: '#bc24c4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body class="grid-pattern">
+    <!-- Enhanced Crypto Grid Elements -->
+    <div class="crypto-grid-element">
+        <i class="fab fa-bitcoin"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fab fa-ethereum"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-chart-line"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-coins"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-wallet"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-exchange-alt"></i>
+    </div>
+    
+    <!-- Floating Crypto Elements -->
+    <div class="floating-crypto" style="top: 10%; left: 5%; animation-delay: 0s;">
+        <i class="fab fa-bitcoin text-4xl"></i>
+    </div>
+    <div class="floating-crypto" style="top: 20%; right: 8%; animation-delay: 3s;">
+        <i class="fab fa-ethereum text-3xl"></i>
+    </div>
+    <div class="floating-crypto" style="top: 50%; left: 7%; animation-delay: 5s;">
+        <i class="fas fa-chart-line text-2xl"></i>
+    </div>
+    <div class="floating-crypto" style="top: 70%; right: 10%; animation-delay: 7s;">
+        <i class="fas fa-coins text-3xl"></i>
+    </div>
+    <div class="floating-crypto" style="top: 30%; left: 12%; animation-delay: 10s;">
+        <i class="fas fa-wallet text-2xl"></i>
+    </div>
+    
+    <!-- Animated Background Elements -->
+    <div class="fixed -left-20 -top-20 w-64 h-64 rounded-full bg-primary-900 opacity-20 blur-3xl -z-10"></div>
+    <div class="fixed -right-20 bottom-1/3 w=72 h-72 rounded-full bg-primary-800 opacity-20 blur-3xl -z-10"></div>
+    
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+        <a href="{{ url_for('main.home') }}" class="flex items-center space-x-2">
+            <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+                <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}" alt="Logo">
+            </div>
+            <span class="text-xl font-bold gradient-text">CryptoSights</span>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="{{ url_for('main.about') }}" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+            <a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-300 hover:text-white transition-colors">Evaluation</a>
+            <a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-300 hover:text-white transition-colors">Documentation</a>
+            <a href="{{ url_for('main.faq') }}" class="text-gray-300 hover:text-white transition-colors">FAQS</a>
+        </div>
+        
+        <div class="flex items-center space-x=4">
+            
+            <a href="{{ url_for('main.main') }}" class="px-4 py-2 mx-4 text-sm rounded-full bg-gradient-to-r from-primary-600 to-primary-400 text-white hover:opacity-90 transition-opacity">
+                Get Started
+            </a>
+            <button class="md:hidden text-gray-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-20 md:py-32 hero-section">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-16 md:mb-0 hero-content">
+                <div class="inline-block px-3 py-1 rounded-full bg-primary-900/30 border border-primary-800/50 mb-4">
+                    <span class="text-xs font-mono text-primary-300">AN INITATIVE BY NIKHIL KUMAR & HARSHAL CHAUDHARI</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    <span class="gradient-text">Crypto Intelligence</span><br>
+                    At Your Fingertips
+                </h1>
+                <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                    Ask any crypto question and get instant, AI-powered insights with sources, charts, and actionable data.
+                </p>
+                
+                <!-- Search Box -->
+                <div class="glass-card rounded-xl p-1 gradient-bg border border-primary-800/30 mb-8 search-box">
+                    <div class="flex items-center px-4 py-3">
+                        <i class="fas fa-search text-primary-400 mr-3"></i>
+                        <input type="text" placeholder="Ask about Bitcoin, Etherium, Dogecoin..." class="bg-transparent w-full text-white placeholder-primary-300/50 focus:outline-none">
+                        <button id="analyze-btn" class="ml-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-400 text-white text-sm font-medium">
+                            Analyze
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                   
+                    <div class="text-sm text-gray-400">
+                        <span class="text-primary-300">*By clicking on get started you agree to our T&C </span> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 relative">
+                <div class="glass-card rounded-2xl p-1 gradient-bg border border-primary-800/30 relative overflow-hidden floating-element">
+                    <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary-600 opacity-10 blur-xl"></div>
+                    <div class="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-primary-400 opacity-10 blur-xl"></div>
+                    
+                    <div class="glass-card rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-medium">Generated Insight</h3>
+                            <div class="text-xs px=2 py-1 rounded bg-primary-900/30 text-primary-300">
+                                <i class="fas fa-bolt mr-1"></i> AI Analysis
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-400 mb-2">Question:</p>
+                            <p class="text-primary-300 font-medium">"How's Solana's proof of history tech holding up?"</p>
+                        </div>
+                        
+                        <div class="h-48 mb-4 relative overflow-y-auto">
+                            <div class="text-sm text-gray-300 space-y-3">
+                                <p>• <strong>Positive sentiment</strong>(Score: 0.40) While Solana has excelled in speed and Ripple dominates in cross-border payments, Lightchain AI introduces a\nmore versatile approach. Its innovations aim to redefine the blockchain landscape by focusing on sustainability, scalability, and advanced AI integration...</p>
+                                <p>• Key indicators show <strong>Market Analysis</strong> It employs an original hybrid consensus\nmechanism that integrates with Proof of History and Proof of Stake, the network performs at unforeseen\nspeed and efficiency. Solana has managed to range between 230-240 dollars, indicating some good\nsupport levels in the asset...</p>
+                                <p>• Analysts note that <strong>Market Analysis</strong> Lightchain AI Stands Out from\nblockchain | DeFi, NFTs | High-speed transactions | | Consensus Mechanism | Proof of Intelligence (PoI) | Proof of Stake (PoS) | Proof of History\n(PoH) | | Tokenomics | Deflationary | Inflationary | Inflationary | | Growth Potential | High | Moderate | Moderate | An Investment Worth\nConsidering For investors seeking life-changing returns, Lightchain AI (LCAI) offe...</p>
+                                
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <div>
+                                <i class="fas fa-clock mr-1"></i> Generated 12 sec ago
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-primary-400 hover:text-primary-300">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="text-primary-400 hover:text-primary-300">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="text-primary-400 hover:text-primary-300">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary-400/10 blur-xl -z-10"></div>
+                <div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-primary-600/10 blur-xl -z-10"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Market Movement Visualization -->
+    
+    
+    <!-- Coin Insights Section -->
+<section class="container mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Top <span class="gradient-text">Coin Insights</span></h2>
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto section-title">
+        Real-time analysis of the most popular cryptocurrencies in the market
+      </p>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <!-- Bitcoin Card -->
+      <div class="glass-card rounded-2xl p-6 gradient-bg border border-primary-800/30 coin-card glow-effect" data-coin="bitcoin">
+        <div class="flex items-center mb-4">
+          <div class="token-icon mr-3"><img src="{{ url_for('static', filename='assets/bg_assests/bitcoin.svg') }}" alt="Bitcoin" /></div>
+          <div>
+            <h3 class="font-bold">Bitcoin</h3>
+            <span class="text-xs text-gray-400">BTC</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="price text-2xl font-bold" id="price-bitcoin">-</p>
+          <p class="text-sm price-up" id="change-bitcoin">+2.4% (24h)</p>
+        </div>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p>• <strong>Dominance:</strong> 48.3%</p>
+          <p>• <strong>Sentiment:</strong> Bullish</p>
+          <p>• <strong>Key Event:</strong> ETF approvals expected</p>
+        </div>
+        <!-- <button class="mt-4 w-full py-2 rounded-lg bg-primary-900/30 text-primary-300 hover:bg-primary-800/50 transition-colors text-sm">
+          Get Full Analysis
+        </button> -->
+      </div>
+  
+      <!-- Ethereum Card -->
+      <div class="glass-card rounded-2xl p-6 gradient-bg border border-primary-800/10 coin-card glow-effect" data-coin="ethereum">
+        <div class="flex items-center mb-4">
+          <div class="token-icon mr-3"><img src="{{ url_for('static', filename='assets/bg_assests/ethereum.svg') }}" alt="Ethereum" width="20px" /></div>
+          <div>
+            <h3 class="font-bold">Ethereum</h3>
+            <span class="text-xs text-gray-400">ETH</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="price text-2xl font-bold" id="price-ethereum">-</p>
+          <p class="text-sm price-up" id="change-ethereum">+1.8% (24h)</p>
+        </div>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p>• <strong>Gas Fee:</strong> 32 gwei</p>
+          <p>• <strong>Sentiment:</strong> Neutral</p>
+          <p>• <strong>Key Event:</strong> Dencun upgrade coming</p>
+        </div>
+        <!-- <button class="mt-4 w-full py-2 rounded-lg bg-primary-900/30 text-primary-300 hover:bg-primary-800/50 transition-colors text-sm">
+          Get Full Analysis
+        </button> -->
+      </div>
+  
+      <!-- Dogecoin Card -->
+      <div class="glass-card rounded-2xl p-6 gradient-bg border border-primary-800/30 coin-card glow-effect" data-coin="dogecoin">
+        <div class="flex items-center mb-4">
+          <div class="token-icon mr-3"><img src="{{ url_for('static', filename='assets/bg_assests/dogecoin.svg') }}" alt="Dogecoin"  /></div>
+          <div>
+            <h3 class="font-bold">Dogecoin</h3>
+            <span class="text-xs text-gray-400">DOGE</span>
+          </div>
+        </div>
+        <div class="mb-4"> 
+          <p class="price text-2xl font-bold price" id="price-dogecoin">-</p>
+          <p class="text-sm price-down" id="change-dogecoin">-0.5% (24h)</p>
+        </div>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p>• <strong>Market Cap:</strong> $11.2B</p>
+          <p>• <strong>Sentiment:</strong> Mixed</p>
+          <p>• <strong>Key Event:</strong> Twitter payment rumors</p>
+        </div>
+        <!-- <button class="mt-4 w-full py-2 rounded-lg bg-primary-900/30 text-primary-300 hover:bg-primary-800/50 transition-colors text-sm">
+          Get Full Analysis
+        </button> -->
+      </div>
+  
+      <!-- Hamster Coin Card -->
+      <div class="glass-card rounded-2xl p-6 gradient-bg border border-primary-800/30 coin-card glow-effect" data-coin="hamster">
+        <div class="flex items-center mb-4">
+          <div class="token-icon mr-3"><img src="{{ url_for('static', filename='assets/bg_assests/hamster.svg') }}" alt="Hamster" /></div>
+          <div>
+            <h3 class="font-bold">Hamster</h3>
+            <span class="text-xs text-gray-400">HAM</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="price text-2xl font-bold" id="price-hamster">-</p>
+          <p class="text-sm price-up" id="change-hamster">+15.3% (24h)</p>
+        </div>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p>• <strong>Volume:</strong> $24.5M</p>
+          <p>• <strong>Sentiment:</strong> Very Bullish</p>
+          <p>• <strong>Key Event:</strong> New exchange listings</p>
+        </div>
+        <!-- <button class="mt-4 w-full py-2 rounded-lg bg-primary-900/30 text-primary-300 hover:bg-primary-800/50 transition-colors text-sm">
+          Get Full Analysis
+        </button> -->
+      </div>
+  
+      <!-- Solana Card -->
+      <div class="glass-card rounded-2xl p-6 gradient-bg border border-primary-800/30 coin-card glow-effect" data-coin="solana">
+        <div class="flex items-center mb-4">
+          <div class="token-icon mr-3"><img src="{{ url_for('static', filename='assets/bg_assests/solana.svg') }}" alt="Solana" width="29" /></div>
+          <div>
+            <h3 class="font-bold">Solana</h3>
+            <span class="text-xs text-gray-400">SOL</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <p class="price text-2xl font-bold" id="price-solana">-</p>
+          <p class="text-sm price-up" id="change-solana">+5.2% (24h)</p>
+        </div>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p>• <strong>TPS:</strong> 2,400</p>
+          <p>• <strong>Sentiment:</strong> Bullish</p>
+          <p>• <strong>Key Event:</strong> Firedancer testnet</p>
+        </div>
+        <!-- <button class="mt-4 w-full py-2 rounded-lg bg-primary-900/30 text-primary-300 hover:bg-primary-800/50 transition-colors text-sm">
+          Get Full Analysis
+        </button> -->
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- New Crypto Chart Section -->
+
+    
+   
+    <!-- Features Section -->
+    <section class="container mx-auto px-6 py=20">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Instant <span class="gradient-text">Crypto Intelligence</span></h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto section-title">
+                Get answers to your crypto questions with AI-powered analysis of market data, news, and on-chain metrics
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card rounded-2xl p-8 gradient-bg border border-primary-800/30 hover:border-primary-600/50 transition-colors insight-card glow-effect">
+                <div class="w-14 h-14 rounded-xl bg-primary-900/50 border border-primary-800/50 flex items-center justify-center mb-6">
+                    <i class="fas fa-robot text-primary-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI-Powered Analysis</h3>
+                <p class="text-gray-300 mb-6">
+                    Our AI scans thousands of data sources to provide comprehensive answers to your crypto questions with cited sources.
+                </p>
+                <a href="{{ url_for('main.main') }}" class="text-primary-400 hover:text-primary-300 flex items-center space-x-2">
+                    <span>See examples</span>
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+            
+            <div class="glass-card rounded-2xl p-8 gradient-bg border border-primary-800/30 hover:border-primary-600/50 transition-colors insight-card glow-effect">
+                <div class="w-14 h-14 rounded-xl bg-primary-900/50 border border-primary-800/50 flex items-center justify-center mb-6">
+                    <i class="fas fa-comments text-primary-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Contextual </h3>
+                <p class="text-gray-300 mb-6">
+                    Every insight comes with relevant answers based on the sentiment analysis.
+                </p>
+                <a href="{{ url_for('main.main') }}" class="text-primary-400 hover:text-primary-300 flex items-center space-x-2">
+                    <span>View samples</span>
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+            
+            <div class="glass-card rounded-2xl p-8 gradient-bg border border-primary-800/30 hover:border-primary-600/50 transition-colors insight-card glow-effect">
+                <div class="w-14 h-14 rounded-xl bg-primary-900/50 border border-primary-800/50 flex items-center justify-center mb-6">
+                    <i class="fas fa-bell text-primary-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Instant AI Powered Sentiment score:</h3>
+                <p class="text-gray-300 mb-6">
+                    Bullish / Bearish / Neutral score for your selected coin and query..
+                </p>
+                <a href="{{ url_for('main.main') }}" class="text-primary-400 hover:text-primary-300 flex items-center space-x-2">
+                    <span>Learn more</span>
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+ 
+   
+ 
+    <!-- CTA Section -->
+    <section class="container mx-auto px-6 py-32 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 section-title">Get <span class="gradient-text">Smarter Crypto Insights</span> Today</h2>
+            <p class="text-xl text-gray-300 mb-10 section-title">
+                Join thousands of crypto professionals using AI to stay ahead in the markets.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="{{ url_for('main.main') }}" class="px-8 py-4 rounded-xl bg-gradient-to-r from-primary-600 to-primary-400 text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center space-x-2 section-title glow-effect">
+                    <span>Start Now - completely free</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+              
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="border-t border-primary-900/30">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-6">
+                         <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+                <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}">
+                        </div>
+                        <span class="text-xl font-bold gradient-text">CryptoSights</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        AI-powered crypto intelligence for traders, analysts, and investors.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                   
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Quick Link</h4>
+                        <ul class="space-y-3">
+                            <li><a href="{{ url_for('main.about') }}" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="{{ url_for('main.faq') }}" class="text-gray-400 hover:text-white transition-colors">FAQS</a></li>
+                            <li><a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                            <li><a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-400 hover:text-white transition-colors">Evaluation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="{{ url_for('main.about') }}" class="text-gray-400 hover:text-white transition-colors">About US</a></li>
+                            <li><a href="{{ url_for('main.privacy') }}" class="text-gray-400 hover:text-white transition-colors">Privacy policy</a></li>
+                            <li><a href="{{ url_for('main.terms') }}" class="text-gray-400 hover:text-white transition-colors">Terms of Services</a></li>
+                            <li><a href="{{ url_for('main.declaration') }}" class="text-gray-400 hover:text-white transition-colors">Declaration</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/techiepookie/crypto-insight-ai" class="w-10 h-10 rounded-full bg-primary-900/50 border border-primary-800/50 flex items-center justify-center text-primary-300 hover:text-white hover:bg-primary-800/30 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            
+                            
+                            <a href="https://www.linkedin.com/in/nikhil-kumar-obhawani-/" class="w-10 h-10 rounded-full bg-primary-900/50 border border-primary-800/50 flex items-center justify-center text-primary-300 hover:text-white hover:bg-primary-800/30 transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary-900/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500 mb-4 md:mb-0">
+                    © 2025 CryptoInsights. All rights reserved.<br>Built with &hearts; by team who have hunger to learn.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="{{ url_for('main.privacy') }}" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ url_for('main.terms') }}" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Include the external JavaScript file -->    
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    </body>
+
+</html>

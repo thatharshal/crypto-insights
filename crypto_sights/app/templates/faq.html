@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoSight FAQ</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/bg_assests/LOGOfavicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    dark: '#0a0a0a',
+                    primary: {
+                        50: '#fdf4ff',
+                        100: '#fae8ff',
+                        200: '#f5d0fe',
+                        300: '#f0abfc',
+                        400: '#e879f9',
+                        500: '#d946ef',
+                        600: '#bc24c4',
+                        700: '#9d1d9d',
+                        800: '#831983',
+                        900: '#6b176b',
+                    },
+                    accent: {
+                        pink: '#ec4899',
+                        purple: '#bc24c4',
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    mono: ['Space Mono', 'monospace'],
+                },
+            }
+        }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="grid-pattern">
+  <!-- Enhanced Crypto Grid Elements -->
+  <div class="crypto-grid-element">
+    <i class="fab fa-bitcoin"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fab fa-ethereum"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-chart-line"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-coins"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-wallet"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-exchange-alt"></i>
+  </div>
+  
+  <!-- Animated Background Elements -->
+  <div class="fixed -left-20 -top-20 w-64 h-64 rounded-full bg-primary-900 opacity-20 blur-3xl -z-10"></div>
+  <div class="fixed -right-20 bottom-1/3 w=72 h-72 rounded-full bg-primary-800 opacity-20 blur-3xl -z-10"></div>
+  
+  <!-- Navigation -->
+  <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+      <a href="{{ url_for('main.home') }}" class="flex items-center space-x-2">
+        <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+          <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}" alt="Logo">
+        </div>
+        <span class="text-xl font-bold gradient-text">CryptoSights</span>
+      </a>
+    
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="{{ url_for('main.home') }}" class="text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="{{ url_for('main.about') }}" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+            <a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-300 hover:text-white transition-colors">Evaluation</a>
+            <a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-300 hover:text-white transition-colors">Documentation</a>
+            <a href="{{ url_for('main.faq') }}" class="text-gray-300 hover:text-white transition-colors">FAQS</a>
+        </div>
+        
+        <div class="flex items-center space-x=4">
+            
+            <a href="{{ url_for('main.main') }}" class="px-4 py-2 mx-4 text-sm rounded-full bg-gradient-to-r from-primary-600 to-primary-400 text-white hover:opacity-90 transition-opacity">
+                Get Started
+            </a>
+            <button class="md:hidden text-gray-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+  
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-12 text-center gradient-text">Frequently Asked Questions</h1>
+    
+    <div class="max-w-3xl mx-auto">
+      <!-- FAQ Items -->
+      <div class="space-y-6">
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">What is CryptoSight and what does it do?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">CryptoSight is a cutting-edge AI platform designed to transform how you engage with cryptocurrency markets. It harnesses real-time data, advanced machine learning models, and sentiment analysis to deliver intelligent insights, trend forecasts, and data-driven recommendations — empowering you to make smarter, faster trading decisions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">How does CryptoSight's AI technology work behind the scenes?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">Our proprietary AI models continuously ingest live market data, global news feeds, social sentiment signals, and blockchain metrics. Using deep learning algorithms, we detect hidden patterns, assess volatility, and forecast potential price movements. The result: accurate, real-time intelligence, packaged in an intuitive, easy-to-navigate interface for traders of all levels.</p>
+          </div>
+        </div>
+        <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">Which cryptocurrencies does CryptoSight currently support?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">CryptoSight supports a growing ecosystem of cryptocurrencies, including Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Cardano (ADA), and hundreds of leading and emerging altcoins. We update our coverage dynamically, ensuring you always have insights on the assets that matter most.</p>
+          </div>
+        </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">What types of insights and analysis can I expect?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">We offer a powerful suite of analytics, including:
+              Sentiment Scores: Real-time measurement of positive, negative, and neutral market sentiment.
+              Price Trend Forecasts: AI-generated projections for price directions and volatility.
+              Side-by-Side Coin Comparisons: Analyze performance, sentiment, risk, and market fundamentals.
+              Custom Alerts: Stay informed on major shifts, spikes, or anomalies that could impact your trades. </p>
+          </div>
+        </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">Is CryptoSight secure? Will my personal information be safe?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">Absolutely. We prioritize your security at every level. CryptoSight does not require you to upload private keys, wallet addresses, or personal financial information. All interactions are secured using industry-grade encryption and our systems undergo regular audits to maintain the highest security standards.</p>
+          </div>
+        </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">How is market sentiment calculated by CryptoSight?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">Our AI models utilize Natural Language Processing (NLP) to scan millions of data points from news articles, crypto forums, social media platforms, and technical reports. Sentiment is scored based on linguistic tone, engagement levels, and emerging narratives — providing you with a real-time emotional barometer of the crypto market.</p>
+          </div>
+        </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+          <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+            <h3 class="text-xl font-medium text-white">Do I need to upload any external data to use CryptoSight?</h3>
+            <span class="plus-icon text-2xl text-primary-400">+</span>
+          </div>
+          <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+            <p class="text-gray-300">No uploads required. CryptoSight is fully autonomous — it aggregates public data sources, analyses them through our proprietary models, and delivers actionable insights to your dashboard without asking for any external inputs from you.</p>
+          </div>
+        </div>
+        <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+          <p class="text-gray-300">Our AI models utilize Natural Language Processing (NLP) to scan millions of data points from news articles, crypto forums, social media platforms, and technical reports. Sentiment is scored based on linguistic tone, engagement levels, and emerging narratives — providing you with a real-time emotional barometer of the crypto market.</p>
+        </div>
+      </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+        <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+          <h3 class="text-xl font-medium text-white">Can I trust CryptoSight’s AI insights for my trading decisions?</h3>
+          <span class="plus-icon text-2xl text-primary-400">+</span>
+        </div>
+        <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+          <p class="text-gray-300">CryptoSight is built to enhance, not replace, human decision-making. While our models deliver high-accuracy predictions validated through extensive backtesting, we recommend using our insights as part of a broader, informed trading strategy. Always consider market risks before investing.</p>
+        </div>
+        <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+          <p class="text-gray-300">Our AI models utilize Natural Language Processing (NLP) to scan millions of data points from news articles, crypto forums, social media platforms, and technical reports. Sentiment is scored based on linguistic tone, engagement levels, and emerging narratives — providing you with a real-time emotional barometer of the crypto market.</p>
+        </div>
+      </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+        <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+          <h3 class="text-xl font-medium text-white">Will CryptoSight eventually offer direct trading or portfolio management?</h3>
+          <span class="plus-icon text-2xl text-primary-400">+</span>
+        </div>
+        <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+          <p class="text-gray-300">We are working towards exciting future updates. While CryptoSight currently focuses on insights and analytics, upcoming releases will integrate trading APIs, portfolio tracking, and smart automation tools — delivering an even more powerful crypto trading experience.</p>
+        </div>
+        
+      </div> <div class="faq-item glass-card rounded-xl overflow-hidden">
+        <div class="faq-question p-6 cursor-pointer flex justify-between items-center" onclick="toggleAnswer(this)">
+          <h3 class="text-xl font-medium text-white">How much does it cost to use CryptoSight?</h3>
+          <span class="plus-icon text-2xl text-primary-400">+</span>
+        </div>
+        <div class="faq-answer p-6 border-t border-primary-900/30 hidden">
+          <p class="text-gray-300">Currently we are to use no hidden charges apply.</p>
+        </div>
+       
+        
+
+      </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="border-t border-primary-900/30">
+    <div class="container mx-auto px-6 py-12">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-8 md:mb-0">
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+              <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}">
+            </div>
+            <span class="text-xl font-bold gradient-text">CryptoSights</span>
+          </div>
+          <p class="text-gray-400 max-w-xs">
+            AI-powered crypto intelligence for traders, analysts, and investors.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Quick Link</h4>
+            <ul class="space-y-3">
+                            <li><a href="{{ url_for('main.about') }}" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="{{ url_for('main.faq') }}" class="text-gray-400 hover:text-white transition-colors">FAQS</a></li>
+                            <li><a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                            <li><a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-400 hover:text-white transition-colors">Evaluation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="{{ url_for('main.about') }}" class="text-gray-400 hover:text-white transition-colors">About US</a></li>
+                            <li><a href="{{ url_for('main.privacy') }}" class="text-gray-400 hover:text-white transition-colors">Privacy policy</a></li>
+                            <li><a href="{{ url_for('main.terms') }}" class="text-gray-400 hover:text-white transition-colors">Terms of Services</a></li>
+                            <li><a href="{{ url_for('main.declaration') }}" class="text-gray-400 hover:text-white transition-colors">Declaration</a></li>
+                        </ul>
+                    </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Connect</h4>
+            <div class="flex space-x-4">
+              <a href="https://github.com/techiepookie/crypto-insight-ai" class="w-10 h-10 rounded-full bg-primary-900/50 border border-primary-800/50 flex items-center justify-center text-primary-300 hover:text-white hover:bg-primary-800/30 transition-colors">
+                <i class="fab fa-github"></i>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/nikhil-kumar-obhawani-/" class="w-10 h-10 rounded-full bg-primary-900/50 border border-primary-800/50 flex items-center justify-center text-primary-300 hover:text-white hover:bg-primary-800/30 transition-colors">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-primary-900/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-gray-500 mb-4 md:mb-0">
+          © 2025 CryptoSights. All rights reserved.<br>Built with &hearts; by team who have hunger to learn.
+        </p>
+                <div class="flex space-x-6">
+                    <a href="{{ url_for('main.privacy') }}" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ url_for('main.terms') }}" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Security</a>
+                </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    // FAQ toggle function
+    function toggleAnswer(questionElement) {
+      const faqItem = questionElement.parentNode;
+      const answerElement = faqItem.querySelector('.faq-answer');
+      const plusIcon = questionElement.querySelector('.plus-icon');
+      
+      // Check if the clicked item is already open
+      const isOpen = !answerElement.classList.contains('hidden');
+      
+      // Hide all answers
+      document.querySelectorAll('.faq-answer').forEach(ans => {
+        ans.classList.add('hidden');
+      });
+      document.querySelectorAll('.plus-icon').forEach(icon => {
+        icon.textContent = '+';
+      });
+      
+      // If the clicked item was closed, open it (otherwise it stays closed)
+      if (!isOpen) {
+        answerElement.classList.remove('hidden');
+        plusIcon.textContent = '-';
+        
+        // Animate with anime.js
+        anime({
+          targets: answerElement,
+          opacity: [0, 1],
+          translateY: [-10, 0],
+          duration: 400,
+          easing: 'easeOutExpo'
+        });
+      }
+    }
+
+    // Animate FAQ items on load
+    document.addEventListener('DOMContentLoaded', function() {
+      anime({
+        targets: '.faq-item',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        delay: anime.stagger(120),
+        duration: 800,
+        easing: 'easeOutCubic'
+      });
+    });
+  </script>
+</body>
+</html>

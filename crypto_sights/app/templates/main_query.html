@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoSights - Query</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/bg_assests/LOGOfavicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main_query.css') }}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    dark: '#0a0a0a',
+                    primary: {
+                        50: '#fdf4ff',
+                        100: '#fae8ff',
+                        200: '#f5d0fe',
+                        300: '#f0abfc',
+                        400: '#e879f9',
+                        500: '#d946ef',
+                        600: '#bc24c4',
+                        700: '#9d1d9d',
+                        800: '#831983',
+                        900: '#6b176b',
+                    },
+                    accent: {
+                        pink: '#ec4899',
+                        purple: '#bc24c4',
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    mono: ['Space Mono', 'monospace'],
+                },
+            }
+        }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="grid-pattern">
+  <!-- Enhanced Crypto Grid Elements -->
+  <div class="crypto-grid-element">
+    <i class="fab fa-bitcoin"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fab fa-ethereum"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-chart-line"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-coins"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-wallet"></i>
+  </div>
+  <div class="crypto-grid-element">
+    <i class="fas fa-exchange-alt"></i>
+  </div>
+  
+  <!-- Animated Background Elements -->
+  <div class="fixed -left-20 -top-20 w-64 h-64 rounded-full bg-primary-900 opacity-20 blur-3xl -z-10"></div>
+  <div class="fixed -right-20 bottom-1/3 w=72 h-72 rounded-full bg-primary-800 opacity-20 blur-3xl -z-10"></div>
+  
+  <div class="container">
+    <!-- Updated Navbar -->
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+      <a href="{{ url_for('main.home') }}" class="flex items-center space-x-2">
+        <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+          <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}" alt="Logo">
+        </div>
+        <span class="text-xl font-bold gradient-text">CryptoSights</span>
+      </a>
+      
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="{{ url_for('main.home') }}" class="text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="{{ url_for('main.about') }}" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+            <a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-300 hover:text-white transition-colors">Evaluation</a>
+            <a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-300 hover:text-white transition-colors">Documentation</a>
+            <a href="{{ url_for('main.faq') }}" class="text-gray-300 hover:text-white transition-colors">FAQS</a>
+        </div>
+        
+        <div class="flex items-center space-x=4">
+            
+            <a href="{{ url_for('main.main') }}" class="px-4 py-2 mx-4 text-sm rounded-full bg-gradient-to-r from-primary-600 to-primary-400 text-white hover:opacity-90 transition-opacity">
+                Get Started
+            </a>
+            <button class="md:hidden text-gray-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- Main Card Section -->
+    <div class="main-card">
+      <!-- Decorative lines -->
+      <div class="decorative-lines">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+        <div class="line line5"></div>
+      </div>
+      
+      <div class="card-content">
+        <h1>CryptoSights</h1>
+        <p class="subtitle">Get real time insights, simplified explanations & smart<br> predictions from our AI assistant.</p>
+        
+        <!-- Buttons for Predefined Questions -->
+        <div class="button-group" id="preset-buttons">
+          <button class="preset-btn">What's the latest crypto trends?</button>
+          <button class="preset-btn">How secure is blockchain technology?</button>
+          <button class="preset-btn">Explain decentralized finance.</button>
+          <button class="preset-btn">Why value of bitcoin crashing after Trumps' tariffs?</button>
+        </div>
+
+        <!-- Loading GIF - Properly centered -->
+        <div id="loading" style="display: none; text-align: center;">
+          <img src="{{ url_for('static', filename='assets/bg_assests/loading.gif') }}" alt="Loading..." class="w-36 h-36 mx-auto">
+          <p class="text-gray-300 mt-2">Getting Insights...</p>
+        </div>
+
+
+
+        <!-- Answer Box -->
+        <div id="answer-box" class="answer-box" style="display: none;"></div>
+      </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+      <div class="coin-label">Select a coin:</div>
+      <div class="select-container">
+        <select id="coin-select">
+          <option value="general crypto">General</option>
+          <option value="bitcoin">Bitcoin</option>
+          <option value="ethereum">Ethereum</option>
+          <option value="solana">Solana</option>
+          <option value="dogecoin">Dogecoin</option>
+          <option value="hamstercoin">Hamstercoin</option>
+        </select>
+      </div>
+      <div class="search-input-container">
+        <input type="text" id="query" placeholder="Search your Query..." >
+      </div>
+      <button class="get-insights" onclick="sendQuery()">Get Insights</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main_query.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    // Animate grid elements on load
+    document.addEventListener('DOMContentLoaded', function() {
+      anime({
+        targets: '.crypto-grid-element',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        delay: anime.stagger(120),
+        duration: 800,
+        easing: 'easeOutCubic'
+      });
+    });
+  </script>
+</body>
+</html>
