@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoSights - About Us</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/bg_assests/LOGOfavicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about_us.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        primary: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#bc24c4',
+                            700: '#9d1d9d',
+                            800: '#831983',
+                            900: '#6b176b',
+                        },
+                        accent: {
+                            pink: '#ec4899',
+                            purple: '#bc24c4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="grid-pattern">
+    <!-- Enhanced Crypto Grid Elements -->
+    <div class="crypto-grid-element">
+        <i class="fab fa-bitcoin"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fab fa-ethereum"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-chart-line"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-coins"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-wallet"></i>
+    </div>
+    <div class="crypto-grid-element">
+        <i class="fas fa-exchange-alt"></i>
+    </div>
+    
+    <!-- Animated Background Elements -->
+    <div class="fixed -left-20 -top-20 w-64 h-64 rounded-full bg-primary-900 opacity-20 blur-3xl -z-10"></div>
+    <div class="fixed -right-20 bottom-1/3 w=72 h-72 rounded-full bg-primary-800 opacity-20 blur-3xl -z-10"></div>
+    
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+      <a href="{{ url_for('main.home') }}" class="flex items-center space-x-2">
+        <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+          <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}" alt="Logo">
+        </div>
+        <span class="text-xl font-bold gradient-text">CryptoSights</span>
+      </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="{{ url_for('main.home') }}" class="text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="{{ url_for('main.about') }}" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+            <a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-300 hover:text-white transition-colors">Evaluation</a>
+            <a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-300 hover:text-white transition-colors">Documentation</a>
+            <a href="{{ url_for('main.faq') }}" class="text-gray-300 hover:text-white transition-colors">FAQS</a>
+        </div>
+        
+        <div class="flex items-center space-x=4">
+            
+            <a href="{{ url_for('main.main') }}" class="px-4 py-2 mx-4 text-sm rounded-full bg-gradient-to-r from-primary-600 to-primary-400 text-white hover:opacity-90 transition-opacity">
+                Get Started
+            </a>
+            <button class="md:hidden text-gray-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+      <section class="about-us container mx-auto px-6 py-20">
+        <div class="glass-card p-8 rounded-xl">
+          <h1 class="text-4xl font-bold mb-8 text-center gradient-text">About Us</h1>
+          <div class="about-content flex flex-col md:flex-row gap-8">
+            <div class="text-content md:w-1/2">
+              <h2 class="text-3xl font-bold mb-4 gradient-text">CryptoSights</h2>
+              <p class="text-xl mb-4 text-gray-300">
+                <b>Shaping the Future of Intelligent Crypto Interaction.</b>
+              </p>
+              <p class="mb-4 text-gray-300">
+                In a digital world that is rapidly transforming, the
+                cryptocurrency space has emerged as one of the most volatile,
+                fast-paced, and opportunity-rich domains.
+              </p>
+              <p class="mb-4 text-gray-300">
+                Yet, navigating this world effectively is often overwhelming,
+                even for seasoned investors. From data deluge to conflicting
+                opinions and unstructured information, the challenges are
+                significant.
+              </p>
+            </div>
+            <div class="image-content md:w-1/2">
+              <img src="{{ url_for('static', filename='assets/bg_assests/aboutus_sidebanner.jpg') }}" alt="image1" class="rounded-xl shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-6 py-12">
+        <div class="glass-card p-8 rounded-xl text-center">
+          <h2 class="text-4xl font-bold mb-6 gradient-text">Our Vision</h2>
+          <p class="text-xl mb-12 text-gray-300">
+            At CryptoSights, our vision is to provide access to crypto
+            intelligence by eliminating the technical and informational barriers
+            users face.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="vision-card p-6 glass-card rounded-xl transition-all hover:transform hover:scale-105">
+              <img src="{{ url_for('static', filename='assets/bg_assests/card1.jpg') }}" alt="Data Access" class="rounded-lg mb-4 w-full" />
+              <p class="text-gray-300">
+                Data becomes accessible to all, not just to data scientists or crypto experts.
+              </p>
+            </div>
+            <div class="vision-card p-6 glass-card rounded-xl transition-all hover:transform hover:scale-105">
+              <img src="{{ url_for('static', filename='assets/bg_assests/card2.jpg') }}" alt="AI Intuition" class="rounded-lg mb-4 w-full" />
+              <p class="text-gray-300">AI enhances investor intuition with real-time clarity.</p>
+            </div>
+            <div class="vision-card p-6 glass-card rounded-xl transition-all hover:transform hover:scale-105">
+              <img src="{{ url_for('static', filename='assets/bg_assests/card3.jpg') }}" alt="Confident Decisions" class="rounded-lg mb-4 w-full" />
+              <p class="text-gray-300">Decisions are informed and confident, not guesswork-driven.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <h2 style="text-align: center;">An Initiative by:</h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<div class="vision-container">
+    <div class="vision-card">  
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='assets/team_members/initative/Nikhil_Kumar_Obhawani.png') }}" alt="Nikhil Kumar Obhawani" />
+        </div>
+        <p>Nikhil Kumar Obhawani</p>
+        <div class="social-icons">
+            <a href="https://github.com/techiepookie" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nikhil-kumar-obhawani-/" aria-label="Linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <div class="vision-card">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='assets/team_members/initative/Harshal_Chaudhari.jpg') }}" alt="Harshal Chaudhari" />
+        </div>
+        <p>Harshal Chaudhari</p>
+        <div class="social-icons">
+            <a href="https://github.com/thatharshal" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/thatharshal/" aria-label="Linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</div>
+
+        <h3 style="text-align: center; font-size: 2rem;">Our Story</h3>
+
+        <section class="our-story-section">
+            <div class="carousel-container">
+                <!-- Left Arrow -->
+                <div class="arrow arrow-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </div>
+                
+                <!-- Carousel -->
+                <div class="carousel">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>The inception</h3>
+                            <p>The inception of CryptoSights was driven by a simple but persistent question:</p>
+                            <p>"Why does understanding the crypto market still require hours of research and technical know-how and overhelmining resources?"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>Market Research</h3>
+                            <p>We started by conducting deep market research and realized that users wanted much more than raw charts:</p>
+                            <p>They craved interpretable, conversational insights.
+Thus began our multi-phase development.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>PHASE 1 – The NLP Model</h3>
+                            <p>The NLP team developed a custom SLM model which was lightweight as well as quick.</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>PHASE 2 – Backend Simplicity</h3>
+                            <p>The backend team developed a lightweight FLASK-based backend while handling the input-query validation and error handling.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>PHASE 3 – The UI-UX</h3>
+                            <p>The UI-UX team built an interface that is both aesthetically refined and functionally powerful.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>PHASE 4 – Frontend</h3>
+                            <p>The Frontend dev team converted the design to code and developed a beautiful frontend design forwarded by the UI-UX team.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Card 7 -->
+                    <div class="card">
+                        <div class="content">
+                            <h3>PHASE 5 – Quality and Evaluation</h3>
+                            <p>Various teams worked for quality assurance and evaluation, making the whole project better every day.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Arrow -->
+                <div class="arrow arrow-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Timeline with dots -->
+            <div class="timeline">
+                <div class="dot" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+                <div class="dot" data-index="3"></div>
+                <div class="dot" data-index="4"></div>
+                <div class="dot" data-index="5"></div>
+                <div class="dot" data-index="6"></div>
+            </div>
+        </section>
+
+        <style>
+        /* CAROUSEL STYLES */
+        .our-story-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 20px 0;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 350px;
+            margin: 0 15px;
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.5s ease;
+            opacity: 0.5;
+            transform: scale(0.9);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card.active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+        }
+
+        /* CARD GRADIENT BACKGROUNDS */
+        .card:nth-child(odd) {
+            background: #5d2d8c;
+        }
+
+        .card:nth-child(even) {
+            background: #c32bca;
+        }
+
+        /* CARD CONTENT STYLES */
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .card .content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .card.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NAVIGATION ARROWS */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .arrow svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* TIMELINE DOTS */
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #4d4d4d;
+            z-index: 0;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4d4d4d;
+            margin: 0 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dot.active {
+            background-color: white;
+            transform: scale(1.5);
+        }
+        </style>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const carousel = document.querySelector('.carousel');
+            const cards = document.querySelectorAll('.card');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
+            const dots = document.querySelectorAll('.dot');
+            
+            // Variables
+            const cardWidth = cards[0].offsetWidth + 30; // 30 is the sum of margins
+            let currentIndex = 1; // Start with the second card active
+            const totalCards = cards.length;
+            
+            // Initialize
+            function init() {
+                // Set initial position to center the first active card
+                updateCarousel();
+                // Add touch support
+                addTouchSupport();
+            }
+            
+            // Update carousel position and card states
+            function updateCarousel() {
+                // Calculate the offset to center the active card
+                const offset = window.innerWidth / 2 - cardWidth / 2;
+                const translateX = offset - (currentIndex * cardWidth);
+                
+                // Move the carousel
+                carousel.style.transform = `translateX(${translateX}px)`;
+                
+                // Update active states
+                cards.forEach((card, index) => {
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Next card function
+            function nextCard() {
+                if (currentIndex < totalCards - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            }
+            
+            // Previous card function
+            function prevCard() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+            
+            // Add touch support for swiping
+            function addTouchSupport() {
+                let startX, moveX;
+                let isDragging = false;
+                
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                }, { passive: true });
+                
+                carousel.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    moveX = e.touches[0].clientX;
+                }, { passive: true });
+                
+                carousel.addEventListener('touchend', (e) => {
+                    isDragging = false;
+                    if (startX - moveX > 50) { // Swipe left
+                        nextCard();
+                    } else if (moveX - startX > 50) { // Swipe right
+                        prevCard();
+                    }
+                }, { passive: true });
+            }
+            
+            // Event listeners
+            arrowRight.addEventListener('click', nextCard);
+            arrowLeft.addEventListener('click', prevCard);
+            
+            // Dot navigation
+            dots.forEach((dot) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = parseInt(dot.getAttribute('data-index'));
+                    updateCarousel();
+                });
+            });
+            
+            // Window resize listener
+            window.addEventListener('resize', updateCarousel);
+            
+            // Initialize
+            init();
+        });
+        </script>
+
+      <div class="progress-bar">
+        <div class="progress-bar">
+          <div class="dot-indicator active" onclick="scrollToCard(0)"></div>
+          <div class="dot-indicator" onclick="scrollToCard(1)"></div>
+          <div class="dot-indicator" onclick="scrollToCard(2)"></div>
+          <div class="dot-indicator" onclick="scrollToCard(3)"></div>
+          <div class="dot-indicator" onclick="scrollToCard(4)"></div>
+          <div class="dot-indicator" onclick="scrollToCard(5)"></div>
+          <div class="dot-indicator" onclick="scrollToCard(6)"></div>
+        </div>
+        <div id="storyProgress" class="progress"></div>
+      </div>
+    </div>
+    <div class="cta-section">
+      <h4>
+      </h4><br>
+    </br>
+       
+
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- Updated Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <!-- Background Image Container -->  
+    <div class="background-container">
+      <div class="background-overlay"></div>
+      
+    </div>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <!-- Updated Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+<style>
+  /* Main layout for the rows of team sections */
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    
+  }
+
+  /* Each team section container */
+  .team-section {
+    width: 289px;
+    margin-bottom: 30px;
+    margin: 0 10px 30px 10px;
+  }
+
+  /* Heading style for each team section */
+  .team-section h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem; 
+  }
+
+  /* Swiper slide container, individual team member card */
+  .swiper-slide {
+    width: 289px;
+    height: 353px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .main-title {
+font-size: 3rem; /* You can adjust: 3rem = 48px */
+font-weight: bold;
+text-align: center;
+color: #ffffff; /* Or whatever suits your theme */
+margin-bottom: 30px; /* Optional: adds space below the title */
+}
+
+
+  /* Image style for the team member */
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+  }
+
+  /* Combined blur effect for name and icons */
+  .swiper-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px; /* Adjust this value based on your content */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 1;
+  }
+
+  /* Name styling */
+  .swiper-slide p {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Icons container styling */
+  .swiper-slide .icons {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 2;
+  }
+
+  /* Icon links styling */
+  .swiper-slide .icons a {
+    color: #ddd;
+    font-size: 1.4rem;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+
+  /* Hover effects */
+  .swiper-slide .icons a:hover {
+    color: #0077b5;
+  }
+
+  .swiper-slide .icons a.fa-github:hover {
+    color: #333;
+  }
+
+  /* Swiper container */
+  .swiper {
+    width: 100%;
+    height: auto;
+    max-width: 289px;
+    margin: 0 auto;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-section {
+      width: 90%;
+    }
+
+    .swiper-slide {
+      width: 90%;
+      margin: 10px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1 class="main-title">Meet the Team!</h1>
+
+  <div class="row">
+    <!-- Frontend Team -->
+    <div class="team-section">
+      <h2>Frontend Team</h2>
+      <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/frontend/Anisah_Firdawas.jpg') }}" alt="Shaik Anisah Firdaws" />
+            <p>Shaik Anisah Firdaws</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/anisah-firdaws"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/anisahfrd18" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/frontend/Namya_Jain.jpg') }}" alt="Namya Jain" />
+            <p>Namya Jain</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/namya-jain-14726929a"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Namya2810" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/frontend/Rajendra_Panchal.jpg') }}" alt="Rajendra Panchal" />
+            <p>Rajendra Panchal</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/rajendra-panchal-527812339/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/rjnpanchal" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/frontend/Nandini_tiwari (2).jpg') }}" alt="Nandini Tiwari" />
+            <p>Nandini Tiwari</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/nandini-tiwari-aa965832b"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/TiwariJi09" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/frontend/Aman_Yadav.jpg') }}" alt="Aman Yadav" />
+            <p>Aman Yadav</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/aman-yadav-2040a22b1"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Aman18118" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/frontend/Harmannat_Kaur.jpg') }}" alt="Harmannat Kaur" />
+            <p>Harmannat Kaur</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/harmannat-kaur-5516372b1/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/mannat1105" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend Team -->
+    <div class="team-section">
+      <h2>Backend Team</h2>
+      <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Abhinav_Gupta.jpg') }}" alt="Abhinav Gupta" />
+            <p>Abhinav Gupta</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/itsabhinavgupta/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/abhistorm/" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Krishnopreya.jpg') }}" alt="Shalini Mittal" />
+            <p>Krishnopreya Chakraborty</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/krishnopreya-chakraborty-431767275/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="github.com/Kpreya" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Aman_Rathour.png') }}" alt="Aman Singh Rathour" />
+            <p>Aman Singh Rathour</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/aman-rathour-64726b322/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Recklore" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Anisah_Firdawas.jpg') }}" alt="Shaik Anisah Firdaws" />
+            <p>Shaik Anisah Firdaws</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/anisah-firdaws"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/anisahfrd18" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Amit_Gupta.jpg') }}" alt="Amit Kumar Prasad" />
+            <p>Amit Kumar Prasad</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/amit-prasad-5348072bb"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/ambrosiusamit" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Raqunaq_Chopra.jpg') }}" alt="Raunaq Chopra" />
+            <p>Raunaq Chopra</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/chopraraunaq/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/raunaq1712" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/backend/Shalini_Mittal.jpg') }}" alt="Shalini Mittal" />
+            <p>Shalini Mittal</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/shalini-mittal-/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/sha-lini-mittal" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- NLP Team -->
+    <div class="team-section">
+      <h2>NLP Model Team</h2>
+      <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Aditi_Kapoor.jpg') }}" alt="Aditi Kapoor" />
+            <p>Aditi Kapoor</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/aditi-kapoor-869349231/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/kapooraditi79" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Amit_Lakhera.jpg') }}" alt="Amit Lakhera" />
+            <p>Amit Lakhera</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/amitlakhera"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/lakhera" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Shankavi_Varsha.png') }}" alt="G R Shankavi Varsha" />
+            <p>G R Shankavi Varsha</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/gr-shankavi-varsha"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/shankvarsh" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Laxmi_Jha.jpg') }}" alt="Laxmi Jha" />
+            <p>Laxmi Jha</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/laxmi-jha-9799b9241/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Laxmi10-git" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Pradipta_Srivastav.jpg') }}" alt="Pradipta Das" />
+            <p>Pradipta Das</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/pradipta-das-779a77165/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Pradipank" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Vikas_Kumar.jpg') }}" alt="Vikas Kumar" />
+            <p>Vikas Kumar</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/vikash-kumar-061a4a2a2"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/vikashcoder8789" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/model/Krishnopreya.jpg') }}" alt="Krishnopreya Chakraborty" />
+            <p>Krishnopreya Chakraborty</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/krishnopreya-chakraborty-431767275/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Kpreya" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evaluation Team -->
+    <div class="team-section">
+      <h2>Evaluation Team</h2>
+      <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Shalini_Mittal.jpg') }}" alt="Shalini Mittal" />
+            <p>Shalini Mittal</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/shalini-mittal-/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/sha-lini-mittal" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Abhijit_j.jpg') }}" alt="Abhijit Narayana J" />
+            <p>Abhijit Narayana J</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/abijith-j-934439309"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/MajesticWhydo" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Aman_Rathour.png') }}" alt="Aman Rathour  " />
+            <p>Aman Singh Rathour</p>
+            <div class="icons">
+              <a
+                href="www.linkedin.com/in/aman-rathour-64726b322/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Recklore" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Amit_Gupta.jpg') }}" alt="Amit Kumar Prasad" />
+            <p>Amit Kumar Prasad</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/amit-prasad-5348072bb"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/ambrosiusamit" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Ananth_shayan.jpg') }}" alt="Anantha Shayan M R" />
+            <p>Anantha Shayan M R</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/anantha-shayana-612b93311"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Anantha-Shayan" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Bhaskar_Mukhopadhyay.jpg') }}" alt="Bhaskar Mukhopadhyay" />
+            <p>Bhaskar Mukhopadhyay</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/bhaskar-mukhopadhyay-748808213"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/bhaskar030" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Laxmi_Jha.jpg') }}" alt="Laxmi Jha" />
+            <p>Laxmi Jha</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/laxmi-jha-9799b9241/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Laxmi10-git" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Dhawal_Tandon.jpg') }}" alt="Dhawal Tandon" />
+            <p>Dhawal Tandon</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/dhawal-tandon-a908391b6"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/DhawalTandon" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Vikas_Kumar.jpg') }}" alt="Vikas Kumar" />
+            <p>Vikas Kumar</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/vikash-kumar-061a4a2a2"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/vikashcoder8789" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Ritik_S.jpg') }}" alt="Ritik S" />
+            <p>Ritik S</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/rithik-s-45b397229/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Rithik910" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Rudransh_jaiswal.jpg') }}" alt="Rudransh Jaiswal" />
+            <p>Rudransh Jaiswal</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/rudransh-jaiswal"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/RudranshJaiswal01/" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Pradipta_Srivastav.jpg') }}" alt="Pradipta Das" />
+            <p>Pradipta Das</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/pradipta-das-779a77165/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Pradipank" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        
+          <div class="swiper-slide">
+            <img src="{{ url_for('static', filename='assets/team_members/evaluation/Namya_Jain.jpg') }}" alt="Namya Jain" />
+            <p>Namya Jain</p>
+            <div class="icons">
+              <a
+                href="https://www.linkedin.com/in/namya-jain-14726929a"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/Namya2810" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    const swipers = document.querySelectorAll(".team-swiper");
+    swipers.forEach((swiperEl) => {
+      new Swiper(swiperEl, {
+        effect: "cards",
+        grabCursor: true,
+        loop: true,
+      });
+    });
+  </script>
+        <h5 style="font-size: 2rem; text-align: center; margin-bottom: 20px;">
+  Have you tried our <span style="color: #EC0AFF;">CryptoSights</span>?
+</h5>
+
+    <a href="{{ url_for('main.main') }}">
+      <button class="cta-button">Try It Now!</button>
+    </a>
+      </div>
+    </main>
+
+<footer class="border-t border-primary-900/30">
+    <div class="container mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between">
+            <div class="mb-8 md:mb-0">
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="w-20 h-12 rounded-full from-primary-800 to-primary-800 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='assets/bg_assests/logo.png') }}">
+                    </div>
+                    <span class="text-xl font-bold gradient-text">CryptoSights</span>
+                </div>
+                <p class="text-gray-400 max-w-xs">
+                    AI-powered crypto intelligence for traders, analysts, and investors.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Quick Link</h4>
+                        <ul class="space-y-3">
+                            <li><a href="{{ url_for('main.about') }}" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="{{ url_for('main.faq') }}" class="text-gray-400 hover:text-white transition-colors">FAQS</a></li>
+                            <li><a href="https://cryptosights.gitbook.io/cryptosights-docs" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                            <li><a href="{{ url_for('main.evaluation_landing') }}" class="text-gray-400 hover:text-white transition-colors">Evaluation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="{{ url_for('main.about') }}" class="text-gray-400 hover:text-white transition-colors">About US</a></li>
+                            <li><a href="{{ url_for('main.privacy') }}" class="text-gray-400 hover:text-white transition-colors">Privacy policy</a></li>
+                            <li><a href="{{ url_for('main.terms') }}" class="text-gray-400 hover:text-white transition-colors">Terms of Services</a></li>
+                            <li><a href="{{ url_for('main.declaration') }}" class="text-gray-400 hover:text-white transition-colors">Declaration</a></li>
+                        </ul>
+                    </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-primary-300 mb-4 uppercase tracking-wider">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/techiepookie/crypto-insight-ai" class="w-10 h-10 rounded-full bg-primary-900/50 border border-primary-800/50 flex items-center justify-center text-primary-300 hover:text-white hover:bg-primary-800/30 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/nikhil-kumar-obhawani-/" class="w-10 h-10 rounded-full bg-primary-900/50 border border-primary-800/50 flex items-center justify-center text-primary-300 hover:text-white hover:bg-primary-800/30 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-primary-900/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-500 mb-4 md:mb-0">
+                © 2025 CryptoSights. All rights reserved.<br>Built with &hearts; by team who have hunger to learn.
+            </p>
+                <div class="flex space-x-6">
+                    <a href="{{ url_for('main.privacy') }}" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ url_for('main.terms') }}" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Security</a>
+                </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/about_us.js') }}"> </script>
+</footer>
+<script>
+  let storyIndex = 0;
+  function scrollStory(direction) {
+    const container = document.getElementById("storyCards");
+    const cards = container.children;
+    const cardWidth = cards[0].offsetWidth + 30;
+    storyIndex += direction;
+    if (storyIndex < 0) storyIndex = 0;
+    if (storyIndex > cards.length - 1) storyIndex = cards.length - 1;
+    container.scrollTo({
+      left: storyIndex * cardWidth,
+      behavior: "smooth",
+    });
+  }
+
+  const storyContainer = document.getElementById("storyCards");
+  const progressEl = document.getElementById("storyProgress");
+  storyContainer.addEventListener("scroll", () => {
+    const scrollLeft = storyContainer.scrollLeft;
+    const maxScroll =
+      storyContainer.scrollWidth - storyContainer.clientWidth;
+    const pct = (scrollLeft / maxScroll) * 100;
+    progressEl.style.width = pct + "%";
+  });
+
+  // Handle navigation link click
+  document.querySelectorAll(".footer-col ul li a").forEach((link) => {
+    link.addEventListener("click", function () {
+      // Remove 'active' class from all links
+      document.querySelectorAll(".footer-col ul li a").forEach((link) => {
+        link.classList.remove("active");
+      });
+      // Add 'active' class to the clicked link
+      this.classList.add("active");
+    });
+  });
+</script>
+
+  </body>
+</html>
