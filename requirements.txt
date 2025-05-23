@@ -14,3 +14,4 @@ trafilatura==2.0.0
 pdfkit==1.0.0
 matplotlib==3.10.1
 pandas==2.2.3
+spacy
