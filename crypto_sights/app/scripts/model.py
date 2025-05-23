@@ -15,7 +15,7 @@ from tqdm import tqdm
 from .keywords import crypto_terms
 
 # Ensure NLTK data is downloaded only once
-nltk_data_path = os.path.expanduser('~/nltk_data')
+nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 nltk.download('punkt', download_dir=nltk_data_path)
 nltk.download('stopwords', download_dir=nltk_data_path)
 nltk.download('wordnet', download_dir=nltk_data_path)
